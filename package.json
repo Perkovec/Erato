@@ -1,0 +1,14 @@
+{
+  "name": "erato",
+  "version": "0.0.1",
+  "description": "Static blog generator",
+  "main": "index.js",
+  "author": "Perkovec",
+  "license": "MIT",
+  "bin": {
+    "erato": "bin/index.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
