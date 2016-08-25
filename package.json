@@ -9,6 +9,8 @@
     "erato": "bin/index.js"
   },
   "dependencies": {
-    "commander": "^2.9.0"
+    "ansicolors": "^0.3.2",
+    "commander": "^2.9.0",
+    "promisify-node": "^0.4.0"
   }
 }
