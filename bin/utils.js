@@ -12,6 +12,15 @@ class Utils {
       console.log(createdText || `${path} created`);
     }
   }
+
+  static existsDir(path) {
+    try {
+      fs.accessSync(path, F_OK);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 }
 
 module.exports = Utils;
