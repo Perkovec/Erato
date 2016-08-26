@@ -45,6 +45,11 @@ function makeDirs(dir) {
     redCross + cyan(' source/posts/ already exists'),
     greenCheck + cyan(' source/posts/ created'));
 
+  // %dir%/sources/posts
+  utils.makeDirCond(draftsDir,
+    redCross + cyan(' source/drafts/ already exists'),
+    greenCheck + cyan(' source/drafts/ created'));
+
   // %dir%/template
   utils.makeDirCond(templateDir,
     redCross + cyan(' template/ already exists'),
