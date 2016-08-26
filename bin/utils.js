@@ -13,7 +13,7 @@ class Utils {
     }
   }
 
-  static existsDir(path) {
+  static existsPath(path) {
     try {
       fs.accessSync(path, F_OK);
       return true;
