@@ -9,17 +9,23 @@ const greenCheck = colors.green('✓');
 const cyan = colors.cyan;
 
 program
-  .arguments('init')
+  .command('init')
   .action(() => {
     const init = require('./init');
     init(dir);
-  })
-  .parse(process.argv);
+  });
 
 program
-  .arguments('generate')
+  .command('generate')
   .action(() => {
     const generate = require('./generate');
     generate(dir);
-  })
-  .parse(process.argv);
+  });
+
+program
+  .command('new <title> [layout]')
+  .action((title, layout) => {
+    console.log(title, layout);
+  });
+
+program.parse(process.argv);
