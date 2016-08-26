@@ -10,6 +10,7 @@ const cyan = colors.cyan;
 
 program
   .command('init')
+  .description('initialize a blog project in the current directory')
   .action(() => {
     const init = require('./init');
     init(dir);
@@ -17,6 +18,7 @@ program
 
 program
   .command('generate')
+  .description('generate blog for publishing')
   .action(() => {
     const generate = require('./generate');
     generate(dir);
@@ -24,6 +26,7 @@ program
 
 program
   .command('new <title> [layout]')
+  .description('create new article')
   .action((title, layout) => {
     console.log(title, layout);
   });
