@@ -28,7 +28,9 @@ program
   .command('new <title> [layout]')
   .description('create new article')
   .action((title, layout) => {
-    console.log(title, layout);
+    layout = (layout !== 'post' && layout !== 'draft') ? 'post' : layout;
+    const create = require('./create');
+    create(dir, title, layout);
   });
 
 program.parse(process.argv);
