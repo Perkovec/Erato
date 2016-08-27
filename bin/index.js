@@ -33,4 +33,12 @@ program
     create(dir, title, layout);
   });
 
+program
+  .command('remove <path>')
+  .description('remove article')
+  .action(path => {
+    const remove = require('./remove');
+    remove(path, dir);
+  });
+
 program.parse(process.argv);
