@@ -9,11 +9,10 @@ const greenCheck = colors.green('✓');
 const cyan = colors.cyan;
 const red = colors.red;
 
-const defaultHeader =
+const headerTemplate =
 `------------------------
-title: Test title
-author: Perkovec
-date: 27.08.2016 01:17
+title: $title
+date: $date
 ------------------------`;
 
 module.exports = (dir, title, layout) => {
@@ -40,6 +39,10 @@ module.exports = (dir, title, layout) => {
       return console.log(red(`article "${title}" already created`));
     }
 
-    fs.writeFileSync(articlePath, defaultHeader);
+    const articleHeader = headerTemplate
+      .replace('$title', title)
+      .replace('$date', (new Date()));
+
+    fs.writeFileSync(articlePath, articleHeader);
   }
 };
