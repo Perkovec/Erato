@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const colors = require('ansicolors');
 const defaultConfig = require('./config.example.json');
+const defaultBuildfile = require('./buildfile.example.json');
 const utils = require('./utils');
 
 const redCross = colors.red('✗');
@@ -74,6 +75,9 @@ module.exports = dir => {
     return writeFile(path.join(dir, 'config.json'), JSON.stringify(completeConfig, null, 2));
   }).then(() => {
     console.log(greenCheck + cyan(' config.json created'));
+    return writeFile(path.join(dir, 'buildfile.json'), JSON.stringify(defaultBuildfile, null, 2));
+  }).then(() => {
+    console.log(greenCheck + cyan(' buildfile.json created'));
     makeDirs(dir);
     rl.close();
   },
